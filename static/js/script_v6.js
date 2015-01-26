@@ -16,7 +16,7 @@ $(function() {
     };
 
     function create_function (i) {
-        return 
+        return function () {
             $.ajax({
                     url: "/",
                     type: "POST",
@@ -29,6 +29,7 @@ $(function() {
                         console.log(results);
                     }
                 })
+        }
     };
 
     function loadData(){
