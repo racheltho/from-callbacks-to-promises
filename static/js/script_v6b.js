@@ -16,7 +16,6 @@ $(function() {
     };
 
     function create_function (i) {
-        return function () {
             return $.ajax({
                     url: "/",
                     type: "POST",
@@ -29,7 +28,6 @@ $(function() {
                         console.log(results);
                     }
                 })
-        }
     };
 
     function loadData(){
@@ -39,11 +37,10 @@ $(function() {
         get_random1 = create_function(1);
         get_random2 = create_function(2);
         get_random3 = create_function(3);
-        get_random1().then(get_random2)
-        .then(get_random3)
+        $.when(get_random1, get_random2, get_random3)
         .then(calculate_average);
     };
 
-    $('#generateButton6').click(loadData);
+    $('#generateButton6b').click(loadData);
 });
 
