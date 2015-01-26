@@ -1,7 +1,12 @@
 $(function() {
+
+    function mean(array){
+        return _.reduce(array, function(sum, a) { return sum + parseFloat(a)}, 0) / array.length;
+    }
+
     function loadData(){
         var start = new Date().getTime();
-        var counter = 0;
+        var results = [];
         $("li").each(function(i){
             var $li = $(this);
             $.ajax({
@@ -10,13 +15,12 @@ $(function() {
                 dataType: "html",
                 success: function(response){
                     $li.text(response);
-                    counter += 1;
-                    if (counter == 3) {
-                        var avg = (parseFloat($("#num-1").text()) + parseFloat($("#num-2").text()) + parseFloat($("#num-3").text()))/3.0;
+                    results.push(response);
+                    if (results.length == 3) {
+                        var avg = mean(results);
                         $("#avg").text(avg);
                         var end = new Date().getTime();
-                        var time = end - start;
-                        $("#time").text(time);
+                        $("#time").text(end - start);
                     }
                 }
             });

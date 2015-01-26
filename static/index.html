@@ -15,17 +15,24 @@
         <div class="form-group">
             <label> Generate 3 random numbers and find average</label>
         </div>
+        Callbacks:
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-7">
-                <button id="generateButton0" class="btn btn-default">Generate 0</button>
-                <button id="generateButton1" class="btn btn-default">Generate 1</button>
-                <button id="generateButton2" class="btn btn-default">Generate 2</button>
-                <button id="generateButton3" class="btn btn-default">Generate 3</button>
-                <button id="generateButton4" class="btn btn-default">Generate 4</button>
-                <button id="generateButton4b" class="btn btn-default">Generate 4b</button>
-                <button id="generateButton6" class="btn btn-default">Generate 6</button>
-                <button id="generateButton6b" class="btn btn-default">Generate 6b</button>
-                <button id="generateButton7" class="btn btn-default">Generate 7</button>
+                <button id="generateButton1" class="btn btn-default">Sequential</button>
+                <button id="generateButton2" class="btn btn-default">Parallel</button>
+                <button id="generateButton3" class="btn btn-default">Parallel,
+                    $.each, _ </button>
+                <button id="generateButton4" class="btn btn-default">Get_all</button>
+            </div>
+        </div>
+        Promises:
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-7">
+                <button id="generateButton6" class="btn btn-default">Ajax,
+                    sequential</button>
+                <button id="generateButton6b" class="btn btn-default">Ajax,
+                    parallel</button>
+                <button id="generateButton7" class="btn btn-default">Homemade</button>
             </div>
         </div>     
    </form>
@@ -42,12 +49,17 @@
         Time taken:
         <p id="time"></p>
     </div>
+    <br>
+    <br>
 
+    <div class="container-fluid">
+        <i>Source code is available <a
+                href="https://github.com/racheltho/from-callbacks-to-promises">here</a></i>
+    </div>
 
     <script src="/static/bower_components/q/q.js"></script>
     <script src="/static/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="/static/bower_components/underscore/underscore-min.js"></script>
-    <script src="/static/js/script_v0.js"></script>
     <script src="/static/js/script_v1.js"></script>
     <script src="/static/js/script_v2.js"></script>
     <script src="/static/js/script_v3.js"></script>

@@ -26,11 +26,8 @@ $(function() {
         var start = new Date().getTime();
         counter = 0;
         getRandomNumber(1, start);
-        console.log(1)
         getRandomNumber(2, start);
-        console.log(2)
         getRandomNumber(3, start);
-        console.log(3)
     };
 
     $('#generateButton2').click(loadData);

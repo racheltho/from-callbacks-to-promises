@@ -8,8 +8,6 @@ $(function() {
     var start;
 
     function calculate_average(){
-        console.log("calculating average...");
-        console.log(results);
         $("#avg").text(mean(results));
         var end = new Date().getTime();
         $("#time").text(end - start);
@@ -21,11 +19,8 @@ $(function() {
                     type: "POST",
                     dataType: "html",
                     success: function(response){
-                        console.log(i);
                         $("#num-" + i.toString()).text(response);
                         results.push(response);
-                        console.log("get random " + i.toString());
-                        console.log(results);
                     }
                 })
     };

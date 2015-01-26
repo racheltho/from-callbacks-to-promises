@@ -30,6 +30,9 @@ $(function() {
                         });
                     }
                 });
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                alert( "There was an error!" );
             }
         });
     }
