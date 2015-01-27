@@ -16,7 +16,7 @@ $(function() {
                 success: function(response){
                     $li.text(response);
                     results.push(response);
-                    if (results.length == 3) {
+                    if (results.length == $("li").length) {
                         var avg = mean(results);
                         $("#avg").text(avg);
                         var end = new Date().getTime();

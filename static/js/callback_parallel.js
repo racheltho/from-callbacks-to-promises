@@ -1,7 +1,9 @@
 $(function() {
+
+    var start;
     var counter;
 
-    function getRandomNumber(i, start){
+    function getRandomNumber(i){
         $.ajax({
             url: "/",
             type: "POST",
@@ -14,8 +16,7 @@ $(function() {
                     var avg = (parseFloat($("#num-1").text()) + parseFloat($("#num-2").text()) + parseFloat($("#num-3").text()))/3.0;
                     $("#avg").text(avg);
                     var end = new Date().getTime();
-                    var time = end - start;
-                    $("#time").text(time);
+                    $("#time").text(end - start);
                 }
             }
         });
@@ -23,11 +24,11 @@ $(function() {
 
 
     function loadData(){
-        var start = new Date().getTime();
+        start = new Date().getTime();
         counter = 0;
-        getRandomNumber(1, start);
-        getRandomNumber(2, start);
-        getRandomNumber(3, start);
+        getRandomNumber(1);
+        getRandomNumber(2);
+        getRandomNumber(3);
     };
 
     $('#generateButton2').click(loadData);
